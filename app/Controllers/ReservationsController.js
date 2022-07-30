@@ -12,21 +12,31 @@ export class ReservationController{
 
 
     createReservation(tripId) {
+    // @ts-ignore
     window.event.preventDefault()
     
+      // @ts-ignore
       let form = window.event.target
 
       let newReservation = {
+        // @ts-ignore
         type: form.type.Value,
+        // @ts-ignore
         name: form.name.value,
+        // @ts-ignore
         confirmation: form.confirmation.value,
+        // @ts-ignore
         address: form.address.value,
+        // @ts-ignore
         date: form.date.value,
-        cost: form.cost.value,
+        // @ts-ignore
+        cost: parseInt(form.cost.value),
         tripId: tripId
       }
       console.log('new res', newReservation);
       reservationsService.createReservation(newReservation)
+      // @ts-ignore
+      form.reset()
   }
 
 

@@ -32,15 +32,20 @@ export class TripsController{
   
   createTrip() {
     console.log('creating a trip');
+    // @ts-ignore
     window.event.preventDefault()
 
+    // @ts-ignore
     let form = window.event.target
 
     let newTrip = {
+      // @ts-ignore
       title: form.newTrip.value
+      
     }
     console.log(newTrip, ProxyState.trips);
     tripsService.createTrip(newTrip)
+    // @ts-ignore
     form.reset()
   }
 
@@ -55,6 +60,11 @@ export class TripsController{
     tripsService._test()
   }
 
-
+  editNote(id) {
+     // @ts-ignore
+     let newText = window.event.target.value
+    tripsService.editNote(id, newText)
+    console.log(newText);
+  }
   
 }

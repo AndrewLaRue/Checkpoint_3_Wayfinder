@@ -10,7 +10,7 @@ export class Trip{
   constructor(data) {
     this.id = data.id || generateId()
     this.title = data.title
-    this.notes = data.notes
+    this.note = data.note || ''
   }
 
 
@@ -36,72 +36,75 @@ export class Trip{
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <div class="row border-bottom border-dark border-3 mb-3">
-                      <div class="col-1">
-                      <div type="button" class=" btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal${this.id}">Notes</div>
+                      <div class="col-6 col-md-1">
+
                       </div>
-                      <div class="col-11 text-end">
-                        <button class="btn text-danger text-center m-0 p-0 selectable" title="Delete Trip" onclick="app.tripsController.deleteTrip('${this.id}')"> <i class="mdi mdi-delete-forever fs-1 "></i> </button>
+                      <div class="col-6 col-md-11 text-end">
+
                       </div>
-                      <div class="col-1">
-                        <p class="mb-0">Type</p>
+                      <div class="col-4 col-md-1">
+                        <p class="">Type</p>
                       </div>
-                      <div class="col-2">
-                        <p class="mb-0">Name</p>
+                      <div class="col-4 col-md-2">
+                        <p class="">Name</p>
                       </div>
-                      <div class="col-2">
-                        <p class="mb-0">Confirmation #</p>
+                      <div class="col-4 col-md-2">
+                        <p class="">Confirmation</p>
                       </div>
-                      <div class="col-3">
-                        <p class="mb-0">Address</p>
+                      <div class="col-4 col-md-3">
+                        <p class="">Address</p>
                       </div>
-                      <div class="col-2">
-                        <p class="mb-0">Date</p>
+                      <div class="col-4 col-md-2">
+                        <p class="">Date</p>
                       </div>
-                      <div class="col-1">
-                        <p class="mb-0">Cost</p>
-                      </div>
-                      <div class="col-1">
-                        <p class="mb-0"> </p>
+                      <div class="col-4 col-md-2">
+                        <p class="">Cost</p>
                       </div>
                     </div>
 
 
                     ${this.Reservations}
 
+                    <div class="text-end">Total Cost: $${this.TotalCost}</div>
 
-                    <div class="row border-top border-dark border-3 pt-1 align-items-center">
-                      <div class="col-1">
-                        <div class="btn-group">
-                          <button class="border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            data-bs-auto-close="true" aria-expanded="false">
-                            Type
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li class="dropdown-item selectable" Value="plane" title="Plane" href="#">✈️</li>
-                            <li class="dropdown-item selectable" Value="lodging" title="Lodging" href="#">🏨</li>
-                            <li class="dropdown-item selectable" Value="activity" title="Activity" href="#">🎡</li>
-                            <li class="dropdown-item selectable" Value="vehicle" title="Vehicle" href="#">🚙</li>
-                          </ul>
+
+                    <form onsubmit="app.reservationsController.createReservation('${this.id}')">
+                      <div class="row border-top border-dark border-3 pt-1 align-items-center">
+                        <div class="col-4 col-md-1">
+                          <select required class="form-control bg-white py-0 text-secondary" type="text" name="type" id="type">
+                            <option value="">Type</option>
+                            <option value="Plane">Plane</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Car">Car</option>
+                          </select>
+                        </div>
+                        <div class="col-4 col-md-2">
+                          <input required class="rounded" type="text" placeholder="Name..." name="name" id="name">
+                        </div>
+                        <div class="col-4 col-md-2">
+                          <input required class="rounded" required type="text" placeholder=" Confirmation #" name="confirmation" id="confirmation">
+                        </div>
+                        <div class="col-4 col-md-3">
+                          <input required class="rounded" required type="text" placeholder="Address..." name="address" id="address">
+                        </div>
+                        <div class="col-4 col-md-2">
+                          <input required class="rounded px-1" required type="date" name="date" id="date">
+                        </div>
+                        <div class="col-2 col-md-1">
+                          <input required class="rounded" required type="Number" placeholder="Cost" name="cost" id="cost">
+                        </div>
+                        <div class="col-2 col-md-1">
+                          <button type="submit" class="btn m-1 selectable"> <i class="mdi mdi-plus"></i> </button>
                         </div>
                       </div>
-                      <div class="col-2">
-                        <input type="text" placeholder="Name...">
-                      </div>
-                      <div class="col-2">
-                        <input type="text" placeholder=" Confirmation #">
-                      </div>
-                      <div class="col-3">
-                        <input type="text" placeholder="Address...">
-                      </div>
-                      <div class="col-2">
-                        <input type="date" name="" id="">
-                      </div>
-                      <div class="col-1">
-                        <input type="Number" placeholder="Cost">
-                      </div>
-                      <div class="col-1 text-center">
-                        <button class="btn btn-outline-secondary" onclick="app.reservationsController.createReservation('${this.id}')"> <i class="mdi mdi-plus"></i> </button>
-                      </div>
+                    </form>
+                  </div>
+                  <div class="row">
+                    <div class="col-8 col-md-10">
+                      <textarea rows="2" placeholder="Notes..." class="form-control ms-5 mb-3 bg-white" onblur="app.tripsController. editNote('${this.id}')">${this.note}</textarea>
+                    </div>
+                    <div class="col-1 offset-1">
+                      <button class="btn text-danger text-center m-0 p-0 selectable" title="Delete Trip" onclick="app.tripsController.deleteTrip('${this.id}')"> <i class="mdi mdi-delete-forever fs-1 "></i></button>
                     </div>
                   </div>
                 </div>
@@ -111,22 +114,6 @@ export class Trip{
 
 
 
-
-           <div class="modal fade" id="modal${this.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-             <div class="modal-dialog">
-               <div class="modal-content">
-                 <div class="modal-body">
-
-                   ${this.notes}
-
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                   <button type="button" class="btn btn-primary">Save changes</button>
-                 </div>
-               </div>
-             </div>
-           </div>
     `
   }
 
@@ -138,13 +125,24 @@ export class Trip{
   get Reservations() {
     let template = ''
     let reservations = ProxyState.reservations.filter(r => r.tripId == this.id)
-    reservations.forEach(r => template += r.Template)
+
+    // @ts-ignore
+    let sortedRes = reservations.sort((a, b) => a.date - b.date)
+
+    sortedRes.forEach(r => template += r.Template)
     
         if(template){
       return template
     } else {
       return '<h5>Please add a reservation to start planning your trip.</h5>'
     }
+  }
+
+  get TotalCost(){
+    let total = 0
+    let reservations = ProxyState.reservations.filter(r => r.tripId == this.id)
+    reservations.forEach(reservation => total += reservation.cost)
+    return total
   }
 
 }
