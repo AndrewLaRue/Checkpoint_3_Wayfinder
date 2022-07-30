@@ -20,39 +20,33 @@ export class Trip{
   get Template() {
     return /*html*/ `
                 <section class="mt-2 mx-md-5 accordion" id="accordionExample">
-              <div class="accordion-item" >
+              <div class="accordion-item clear border-0" >
 
                 
 
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${this.id}"
+                <h1 class="accordion-header border-0" id="headingOne">
+                  <button class="accordion-button clear border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${this.id}"
                     aria-expanded="true" aria-controls="collapse${this.id}">
-                    ${this.title}
+                    <span class="fs-1 text-light title-font">${this.title}</span> 
                   </button>
-                </h2>
+                </h1>
 
 
-                <div id="collapse${this.id}" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div id="collapse${this.id}" class="accordion-collapse collapse show clear-fog" aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="row border-bottom border-dark border-3 mb-3">
-                      <div class="col-6 col-md-1">
-
-                      </div>
-                      <div class="col-6 col-md-11 text-end">
-
-                      </div>
+                    <div class="row border-bottom border-secondary border-3 mb-3 text-light">
                       <div class="col-4 col-md-1">
                         <p class="">Type</p>
                       </div>
                       <div class="col-4 col-md-2">
-                        <p class="">Name</p>
+                        <p class="">Unit</p>
                       </div>
                       <div class="col-4 col-md-2">
-                        <p class="">Confirmation</p>
+                        <p class="">Authorization</p>
                       </div>
                       <div class="col-4 col-md-3">
-                        <p class="">Address</p>
+                        <p class="">Location</p>
                       </div>
                       <div class="col-4 col-md-2">
                         <p class="">Date</p>
@@ -65,43 +59,43 @@ export class Trip{
 
                     ${this.Reservations}
 
-                    <div class="text-end">Total Cost: $${this.TotalCost}</div>
+                    <div class="text-end text-light">Total Cost: $${this.TotalCost}</div>
 
 
                     <form onsubmit="app.reservationsController.createReservation('${this.id}')">
-                      <div class="row border-top border-dark border-3 pt-1 align-items-center">
+                      <div class="row border-top border-secondary border-3 pt-1 align-items-center">
                         <div class="col-4 col-md-1">
-                          <select class="form-control" name="type" id="type" required>
+                          <select class="form-control border-0 py-0 text-light bg-light text-secondary selectable" name="type" id="type" title="Type" required>
                             <option disabled selected value="">Type</option>
-                            <option value="✈️">✈️</option>
-                            <option value="🚗">🚗</option>
-                            <option value="🏨">🏨</option>
+                            <option value="🛣️">🛣️ Land</option>
+                            <option value="🛩️">🛩️ Air</option>
+                            <option value="🌊">🌊 Sea</option>
                           </select>
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded" type="text" placeholder="Name..." name="name" id="name">
+                          <input required class="rounded bg-light" type="text" placeholder="Unit" name="name" id="name" title="Unit">
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded" required type="text" placeholder=" Confirmation #" name="confirmation" id="confirmation">
+                          <input required class="rounded bg-light" required type="text" placeholder="Authorization" name="confirmation" id="confirmation" title="Authorization">
                         </div>
                         <div class="col-4 col-md-3">
-                          <input required class="rounded" required type="text" placeholder="Address..." name="address" id="address">
+                          <input required class="rounded bg-light" type="text" placeholder="Location" name="address" id="address" title="Location">
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded px-1" required type="date" name="date" id="date">
+                          <input required class="rounded px-1 text-secondary bg-light" type="date" name="date" id="date" title="Date">
                         </div>
                         <div class="col-2 col-md-1">
-                          <input required class="rounded" required type="Number" placeholder="Cost" name="cost" id="cost">
+                          <input required step="100" value="0" class="rounded bg-light" type="Number" placeholder="Cost" name="cost" id="cost" title="Cost">
                         </div>
                         <div class="col-2 col-md-1">
-                          <button type="submit" class="btn m-1 selectable"> <i class="mdi mdi-plus"></i> </button>
+                          <button type="submit" class="btn m-1 selectable bg-light" title="Deploy Troops"> <i class="mdi mdi-plus"></i> </button>
                         </div>
                       </div>
                     </form>
                   </div>
                   <div class="row">
                     <div class="col-8 col-md-10">
-                      <textarea rows="2" placeholder="Notes..." class="form-control ms-5 mb-3 bg-white" onblur="app.tripsController. editNote('${this.id}')">${this.note}</textarea>
+                      <textarea rows="2" placeholder="Notes..." class="form-control ms-5 mb-3 bg-dark text-light" onblur="app.tripsController. editNote('${this.id}')">${this.note}</textarea>
                     </div>
                     <div class="col-1 offset-1">
                       <button class="btn text-danger text-center m-0 p-0 selectable" title="Delete Trip" onclick="app.tripsController.deleteTrip('${this.id}')"> <i class="mdi mdi-delete-forever fs-1 "></i></button>
@@ -134,7 +128,7 @@ export class Trip{
         if(template){
       return template
     } else {
-      return '<h5>Please add a reservation to start planning your trip.</h5>'
+      return '<h5>Please add a unit to start planning your campaign.</h5>'
     }
   }
 

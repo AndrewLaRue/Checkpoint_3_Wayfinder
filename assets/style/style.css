@@ -4,7 +4,21 @@ input {
   border: 0ch;
 }
 
-/* .trip-bar {
-  display: flex;
-  flex-direction: row;
-} */
+.hero-img {
+  background-image: url(/assets/img/army-world-map.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.clear {
+  background-color: transparent !important;
+}
+
+.clear-fog {
+  backdrop-filter: blur(2px);
+  /* background-color: black; */
+}
+
+.title-font {
+  font-family: 'Black Ops One', cursive;
+}

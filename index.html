@@ -9,24 +9,32 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>Checkpoint_3_Wayfinder</title>
 </head>
 
-<body>
-  <header class="container-fluid bg-dark">
+
+
+
+<body class="hero-img">
+  <header class="container-fluid clear">
     <div class="row align-items-center">
       <div class="col-md-4 offset-md-1 text-light">
-        <h1 class=""> <span class="mdi mdi-earth"></span> WayFinder</h1>
+        <h1 class="title-font"> <span class="mdi mdi-tank"></span> BattleAid <span
+            class="mdi mdi-tank mdi:select-inverse"></span>
+        </h1>
       </div>
-      <div class="col-md-4 offset-md-2 text-end">
+      <div class="col-md-5 offset-md-1 text-end">
         <form onsubmit="app.tripsController.createTrip()">
-          <div class=" d-flex flex-row trip-bar">
-            <label for="newTrip" class="form-label"></label>
-            <input required type="text" placeholder="Plan a new trip..." class="form-control my-5" id="newTrip"
-              minlength="3" maxlength="15" name="newTrip" aria-describedby="emailHelp">
-            <button type="submit" class="btn selectable"> <i class="mdi mdi-plus-box-outline fs-1 text-light"></i>
+          <div class="d-flex flex-row">
+            <label for="newTrip" class="form-label" id="inputGroup-sizing-sm"></label>
+            <input required type="text" placeholder="Plan a new campaign..." class="form-control my-4" id="newTrip"
+              minlength="3" maxlength="15" name="newTrip" aria-describedby="new trip">
+            <button type="submit" class="btn selectable"> <i class="mdi mdi-radar fs-1 text-light"></i>
             </button>
           </div>
         </form>
@@ -34,7 +42,7 @@
     </div>
   </header>
 
-  <main class="bg-dark">
+  <main>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -155,7 +163,7 @@
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-light sticky-bottom">
+  <footer class="clear text-light sticky-bottom">
     <div class="text-center no-select">
       <p><small>Andrew || Summer 2022</small></p>
     </div>
