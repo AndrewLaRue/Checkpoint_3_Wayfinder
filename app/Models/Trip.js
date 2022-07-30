@@ -71,11 +71,11 @@ export class Trip{
                     <form onsubmit="app.reservationsController.createReservation('${this.id}')">
                       <div class="row border-top border-dark border-3 pt-1 align-items-center">
                         <div class="col-4 col-md-1">
-                          <select required class="form-control bg-white py-0 text-secondary" type="text" name="type" id="type">
-                            <option value="">Type</option>
-                            <option value="Plane">Plane</option>
-                            <option value="Hotel">Hotel</option>
-                            <option value="Car">Car</option>
+                          <select class="form-control" name="type" id="type" required>
+                            <option disabled selected value="">Type</option>
+                            <option value="✈️">✈️</option>
+                            <option value="🚗">🚗</option>
+                            <option value="🏨">🏨</option>
                           </select>
                         </div>
                         <div class="col-4 col-md-2">

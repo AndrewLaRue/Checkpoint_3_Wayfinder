@@ -20,7 +20,7 @@ export class ReservationController{
 
       let newReservation = {
         // @ts-ignore
-        type: form.type.Value,
+        type: form.type.value,
         // @ts-ignore
         name: form.name.value,
         // @ts-ignore
