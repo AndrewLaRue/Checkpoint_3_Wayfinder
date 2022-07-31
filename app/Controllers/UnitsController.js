@@ -1,24 +1,24 @@
-import { reservationsService } from "../Services/ReservationsService.js";
+import { unitsService } from "../Services/UnitsService.js";
 import { Pop } from "../Utils/Pop.js";
 
 
 
-export class ReservationController{
+export class UnitController{
 
   constructor() {
-    // console.log('reservations controller');
+    // console.log('units controller');
     // this.test()
   }
 
 
-    createReservation(tripId) {
+    createUnit(campaignId) {
     // @ts-ignore
     window.event.preventDefault()
     
       // @ts-ignore
       let form = window.event.target
 
-      let newReservation = {
+      let newUnit = {
         // @ts-ignore
         type: form.type.value,
         // @ts-ignore
@@ -31,23 +31,23 @@ export class ReservationController{
         date: form.date.value,
         // @ts-ignore
         cost: parseInt(form.cost.value),
-        tripId: tripId
+        campaignId: campaignId
       }
-      // console.log('new res', newReservation);
+      // console.log('new res', newUnit);
 
-      reservationsService.createReservation(newReservation)
+      unitsService.createUnit(newUnit)
       // @ts-ignore
       form.reset()
   }
 
 
- async deleteReservation(id) {
+ async deleteUnit(id) {
     if (await Pop.confirm()) {
-      reservationsService.deleteReservation(id)
+      unitsService.deleteUnit(id)
     }
   }
 
   // test() {
-  //   reservationsService._test()
+  //   unitsService._test()
   // }
 }

@@ -1,13 +1,13 @@
-import { ReservationController } from "./Controllers/ReservationsController.js";
-import { TripsController } from "./Controllers/TripsController.js";
+import { UnitController } from "./Controllers/UnitsController.js";
+import { CampaignsController } from "./Controllers/CampaignsController.js";
 // import { ValuesController } from "./Controllers/ValuesController.js";
 
 class App {
   // valuesController = new ValuesController();
 
-  tripsController = new TripsController()
+  campaignsController = new CampaignsController()
 
-  reservationsController = new ReservationController()
+  unitsController = new UnitController()
 }
 
 window["app"] = new App();

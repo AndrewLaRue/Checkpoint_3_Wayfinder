@@ -4,7 +4,7 @@ import { generateId } from "../Utils/generateId.js"
 
 
 
-export class Reservation{
+export class Unit{
 
   constructor(data) {
     this.id = data.id || generateId()
@@ -14,13 +14,13 @@ export class Reservation{
     this.address = data.address
     this.date = new Date(data.date)
     this.cost = data.cost
-    this.tripId = data.tripId
+    this.campaignId = data.campaignId
   }
 
 
   get Template() {
     return `
-                    <div id="reservation" class="row heavy-dark rounded align-items-center mb-2">
+                    <div id="reservation" class="row heavy units-mobile rounded align-items-center mb-2">
                       
                       <div class="col-4 col-md-1 py-1 fs-6 scale-up" title="Type">
                         ${this.type}
@@ -41,7 +41,7 @@ export class Reservation{
                         $${this.cost}
                       </div>
                       <div class="col-1 col-md-1 text-end py-1" title="Delete Unit">
-                        <button class="btn text-danger selectable p-0" onclick="app.reservationsController.deleteReservation('${this.id}')"> <i class="mdi mdi-delete-forever"></i> </button>
+                        <button class="btn text-danger selectable p-0" onclick="app.unitsController.deleteUnit('${this.id}')"> <i class="mdi mdi-delete-forever"></i> </button>
                       </div>
                     </div>
     `

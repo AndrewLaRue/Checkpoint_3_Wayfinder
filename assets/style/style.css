@@ -24,7 +24,7 @@ input {
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .heavy {
@@ -43,6 +43,23 @@ input {
   transform: scale(1.25);
 }
 
+.desktop-note {
+  height: 6em;
+}
+
+@media (max-width: 768px) {
+  .mobile-note {
+    height: 5em;
+  }
+
+  .units-mobile {
+    text-shadow: 1px 1px 2px black !important;
+    font-weight: 700 !important;
+    color: rgb(215, 215, 215) !important;
+    background-color: #111927;
+  }
+}
+
 @media (min-width: 768px) {
   .clear {
     background-color: transparent !important;
@@ -59,3 +76,12 @@ input {
     background-size: cover;
   }
 }
+
+.text-grey {
+  color: rgb(161, 155, 155) !important;
+}
+
+/* .area-text {
+  min-height: 2em;
+  display: flex;
+} */

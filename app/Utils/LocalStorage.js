@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
-import { Reservation } from "../Models/Reservation.js";
-import { Trip } from "../Models/Trip.js";
+import { Unit } from "../Models/Unit.js";
+import { Campaign } from "../Models/Campaign.js";
 
 
 
@@ -8,8 +8,8 @@ import { Trip } from "../Models/Trip.js";
 export function saveState(){
   // console.log('saving');
   let data = {
-    reservations : ProxyState.reservations,
-    trips: ProxyState.trips
+    units : ProxyState.units,
+    campaigns: ProxyState.campaigns
   }
   localStorage.setItem('WayFinder', JSON.stringify(data))
 
@@ -21,8 +21,8 @@ export function loadState(){
   let rawData = localStorage.getItem('WayFinder')
   if(rawData){
     let data = JSON.parse(rawData)
-    ProxyState.trips = data.trips.map(t => new Trip(t))
-    ProxyState.reservations = data.reservations.map(r => new Reservation(r))
+    ProxyState.campaigns = data.campaigns.map(t => new Campaign(t))
+    ProxyState.units = data.units.map(r => new Unit(r))
   }
   
 

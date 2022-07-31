@@ -29,11 +29,12 @@
         </h1>
       </div>
       <div class="col-md-4 offset-md-1 text-end">
-        <form onsubmit="app.tripsController.createTrip()">
+        <form onsubmit="app.campaignsController.createCampaign()">
           <div class="d-flex flex-row">
-            <label for="newTrip" class="form-label" id="inputGroup-sizing-sm"></label>
-            <input required type="text" placeholder="Plan a new campaign..." class="form-control my-4 bg-dark border-0"
-              id="newTrip" minlength="3" maxlength="15" name="newTrip" aria-describedby="new trip">
+            <label for="newCampaign" class="form-label" id="inputGroup-sizing-sm"></label>
+            <input required type="text" placeholder="Plan a new campaign..."
+              class="form-control my-4 bg-dark heavy border-0" id="newCampaign" minlength="3" maxlength="15"
+              name="newCampaign" aria-describedby="new campaign">
             <button type="submit" class="btn selectable"> <i class="mdi mdi-radar fs-1 heavy-dark"></i>
             </button>
           </div>
@@ -46,7 +47,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="trip">
+          <div id="campaign">
             <!-- <section class="mt-2 mx-md-5 accordion" id="accordionExample">
               <div class="accordion-item">
 
@@ -54,7 +55,7 @@
                 <h2 class="accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
-                    Trip name goes here
+                    Campaign name goes here
                   </button>
                 </h2>
 
