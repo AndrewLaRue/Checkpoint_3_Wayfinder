@@ -23,21 +23,19 @@
 <body class="bg-mobile bg-desktop">
   <header class="container-fluid clear">
     <div class="row align-items-center">
-      <div class="col-md-6 offset-md-1 text-light">
+      <div class="col-12 col-md-6 offset-md-1 text-light">
         <h1 class="title-font heavy-dark text-center text-md-start"> <span class="mdi mdi-tank"></span> BattleAid <span
             class="mdi mdi-tank mdi:select-inverse"></span>
         </h1>
       </div>
-      <div class="col-md-4 offset-md-1 text-end">
+      <div class=" col-12 col-md-5 text-center">
         <form onsubmit="app.campaignsController.createCampaign()">
-          <div class="d-flex flex-row">
-            <label for="newCampaign" class="form-label" id="inputGroup-sizing-sm"></label>
-            <input required type="text" placeholder="Plan a new campaign..."
-              class="form-control my-4 bg-dark heavy border-0" id="newCampaign" minlength="3" maxlength="15"
-              name="newCampaign" aria-describedby="new campaign">
-            <button type="submit" class="btn selectable"> <i class="mdi mdi-radar fs-1 heavy-dark"></i>
-            </button>
-          </div>
+          <label for="newCampaign" class="form-label" id="inputGroup-sizing-sm"></label>
+          <input required type="text" placeholder="Plan a new campaign..."
+            class=" my-4 border-bottom border-2 border-dark text-center clear heavy fs-4" id="newCampaign" minlength="3"
+            maxlength="15" name="newCampaign" aria-describedby="new campaign">
+          <button type="submit" class="btn selectable scale-up"> <i class="mdi mdi-radar fs-1 heavy-dark"></i>
+          </button>
         </form>
       </div>
     </div>
@@ -47,116 +45,42 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="campaign">
-            <!-- <section class="mt-2 mx-md-5 accordion" id="accordionExample">
-              <div class="accordion-item">
+          <!-- TODO  Put id back -->
+          <section id="campaign">
+            <!-- <p>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-1-${this.id}" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-bs-target
+              </button>
+              <button class="border-0 clear" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-1-${this.id}" onclick="app.campaignsController.toggleCollapse('${this.id}')"
+                aria-expanded="true" aria-controls="collapse-1-${this.id}">
+                <span class="fs-2 heavy-dark title-font">${this.title}</span>
+              </button>
+            </p>
+            <div class="collapse" id="collapse-1-${this.id}">
+
+              this is where the units go
 
 
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    Campaign name goes here
-                  </button>
-                </h2>
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2"
+                  aria-expanded="false" aria-controls="collapseExample">
+                  Button with data-bs-target
+                </button>
+                <button class="border-0 clear" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-2-${this.id}" onclick="app.campaignsController.toggleCollapse('${this.id}')"
+                  aria-expanded="true" aria-controls="collapse-2-${this.id}">
+                  <span class="fs-2 heavy-dark title-font">Add/info</span>
+                </button>
+              </p>
+              <div class="collapse" id="collapse-2-${this.id}">
 
+                form here
 
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <div class="row border-bottom border-dark border-3 mb-3">
-                      <div class="col-1">
-                        <p class="mb-0">Type</p>
-                      </div>
-                      <div class="col-2">
-                        <p class="mb-0">Name</p>
-                      </div>
-                      <div class="col-2">
-                        <p class="mb-0">Confirmation #</p>
-                      </div>
-                      <div class="col-3">
-                        <p class="mb-0">Address</p>
-                      </div>
-                      <div class="col-2">
-                        <p class="mb-0">Date</p>
-                      </div>
-                      <div class="col-1">
-                        <p class="mb-0">Cost</p>
-                      </div>
-                      <div class="col-1">
-                        <p class="mb-0"> </p>
-                      </div>
-                    </div>
-
-                    
-
-                    <div id="reservation" class="row bg-secondary rounded aligh-items-center mb-3">
-                      
-
-                      <div class="col-1">
-                        Type
-                      </div>
-                      <div class="col-2">
-                        Name
-                      </div>
-                      <div class="col-2">
-                        Confirmation #
-                      </div>
-                      <div class="col-3">
-                        Address
-                      </div>
-                      <div class="col-2">
-                        Date
-                      </div>
-                      <div class="col-1">
-                        Cost
-                      </div>
-                      <div class="col-1">
-                        <button class="btn text-danger text-center"> <i class="mdi mdi-delete-forever"></i> </button>
-                      </div>
-
-                    </div>
-
-                    
-
-                    <div class="row border-top border-dark border-3 pt-1 align-items-center">
-                      <div class="col-1">
-                        <div class="btn-group">
-                          <button class="border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            data-bs-auto-close="true" aria-expanded="false">
-                            Type
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li class="dropdown-item selectable" title="Plane" href="#">✈️</li>
-                            <li class="dropdown-item selectable" title="Lodging" href="#">🏨</li>
-                            <li class="dropdown-item selectable" title="Activity" href="#">🎡</li>
-                            <li class="dropdown-item selectable" title="Vehicle" href="#">🚙</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-2">
-                        <input type="text" placeholder="Name...">
-                      </div>
-                      <div class="col-2">
-                        <input type="text" placeholder=" Confirmation #">
-                      </div>
-                      <div class="col-3">
-                        <input type="text" placeholder="Address...">
-                      </div>
-                      <div class="col-2">
-                        <input type="date" name="" id="">
-                      </div>
-                      <div class="col-1">
-                        <input type="Number" placeholder="Cost">
-                      </div>
-                      <div class="col-1 text-center">
-                        <button class="btn btn-outline-secondary"> <i class="mdi mdi-plus"></i> </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </section> -->
-          </div>
+            </div> -->
+          </section>
         </div>
       </div>
     </div>
@@ -165,7 +89,7 @@
 
   <footer class="clear text-light sticky-bottom">
     <div class="text-center no-select">
-      <p class=" my-0 py-0 heavy">Andrew || Summer 2022</p>
+      <p class="m-2 p-2 mb-0 pb-0 title-font heavy-dark fs-6">Andrew || Summer 2022</p>
     </div>
   </footer>
 
@@ -181,5 +105,11 @@
   </section>
 
 </body>
+
+
+
+
+
+
 
 </html>

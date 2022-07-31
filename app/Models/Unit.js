@@ -20,28 +20,27 @@ export class Unit{
 
   get Template() {
     return `
-                    <div id="reservation" class="row heavy units-mobile rounded align-items-center mb-2">
-                      
-                      <div class="col-4 col-md-1 py-1 fs-6 scale-up" title="Type">
-                        ${this.type}
+                    <div class="row heavy units-mobile rounded border border-1 my-2 border-dark">
+                      <div class="col-4 col-md-1 scale-up" title="Type">
+                        <p class="my-2 no-select">${this.type}</p>
                       </div>
-                      <div class="col-4 col-md-2 py-1 fs-6 scale-up" title="Unit">
-                        ${this.name}
+                      <div class="col-4 col-md-2 scale-up" title="Unit">
+                        <p class="my-2 no-select">${this.name}</p>
                       </div>
-                      <div class="col-4 col-md-2 py-1 fs-6 scale-up" title="Authorization">
-                        ${this.confirmation}
+                      <div class="col-4 col-md-2 scale-up" title="Authorization">
+                        <p class="my-2 no-select">${this.confirmation}</p>
                       </div>
-                      <div class="col-4 col-md-3 py-1 fs-6 scale-up" title="Location">
-                        ${this.address}
+                      <div class="col-4 col-md-3 scale-up" title="Location">
+                        <p class="my-2 no-select">${this.address}</p>
                       </div>
-                      <div class="col-4 col-md-2 py-1 fs-6 scale-up" title="Date">
-                      ${this.date.toLocaleDateString('en-us', { timeZone: 'Europe/Helsinki' })}
+                      <div class="col-4 col-md-2 scale-up" title="Date">
+                      <p class="my-2 no-select">${this.date.toLocaleDateString('en-us', { timeZone: 'Europe/Helsinki' })}</p>
                       </div>
-                      <div class="col-2 col-md-1 py-1 fs-6 scale-up" title="Unit Cost">
-                        $${this.cost}
+                      <div class="col-2 col-md-1 scale-up" title="Unit Cost">
+                        <p class="my-2 no-select">$${this.cost}</p>
                       </div>
-                      <div class="col-1 col-md-1 text-end py-1" title="Delete Unit">
-                        <button class="btn text-danger selectable p-0" onclick="app.unitsController.deleteUnit('${this.id}')"> <i class="mdi mdi-delete-forever"></i> </button>
+                      <div class="col-1 text-center" title="Delete Unit">
+                        <button class="btn text-danger selectable scale-up p-0 my-1 fs-5" onclick="app.unitsController.deleteUnit('${this.id}')"> <i class="mdi mdi-delete-forever"></i> </button>
                       </div>
                     </div>
     `

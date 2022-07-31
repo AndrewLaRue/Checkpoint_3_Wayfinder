@@ -60,6 +60,17 @@ export class CampaignsController{
     campaignsService.editNote(id, newText)
     // console.log(newText);
   }
+
+    toggleCollapse(campaignId){
+
+    campaignsService.toggleCollapse(campaignId)
+
+  }
+    toggleCollapse2(campaignId){
+
+    campaignsService.toggleCollapse2(campaignId)
+
+  }
   
   // test() {
   //   campaignsService._test()

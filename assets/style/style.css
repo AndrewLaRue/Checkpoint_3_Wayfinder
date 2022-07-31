@@ -25,7 +25,7 @@ input {
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .heavy {
@@ -61,15 +61,17 @@ input {
   }
 }
 
-@media (min-width: 768px) {
-  .clear {
-    background-color: transparent !important;
-  }
+.clear {
+  background-color: transparent !important;
+}
 
-  .clear-fog {
-    backdrop-filter: blur(3px);
-    /* background-color: transparent !important; */
-  }
+.clear-fog {
+  backdrop-filter: blur(3px);
+  /* background-color: transparent !important; */
+}
+
+@media (min-width: 768px) {
+
 
   .bg-desktop {
     background-image: url(/assets/img/Globe.png);
@@ -79,8 +81,13 @@ input {
 }
 
 .text-grey {
-  color: rgb(161, 155, 155) !important;
+  color: rgb(124, 121, 121) !important;
 }
+
+.rounded-0 {
+  border-radius: 0% !important;
+}
+
 
 /* .area-text {
   min-height: 2em;

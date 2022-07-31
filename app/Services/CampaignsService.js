@@ -3,6 +3,22 @@ import { Campaign } from "../Models/Campaign.js";
 
 
 class CampaignsService{
+  toggleCollapse(campaignId) {
+          let campaign = ProxyState.campaigns.find(l => l.id == campaignId)
+      // @ts-ignore
+      campaign.collapsed = !campaign.collapsed
+
+      ProxyState.campaigns = ProxyState.campaigns
+  }
+  toggleCollapse2(campaignId) {
+          let campaign = ProxyState.campaigns.find(l => l.id == campaignId)
+      // @ts-ignore
+      campaign.collapsed2 = !campaign.collapsed2
+
+      ProxyState.campaigns = ProxyState.campaigns
+  }
+
+
   editNote(id, newText) {
     let noteEdit = ProxyState.campaigns.find(t => t.id == id)
     // @ts-ignore

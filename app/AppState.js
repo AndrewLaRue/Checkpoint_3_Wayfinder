@@ -12,14 +12,18 @@ class AppState extends EventEmitter {
   campaigns = [
     new Campaign({
       id: 10,
-      title: 'Bear World',
-      note: 'So fluffy it hurts.'
+      title: 'Western Offensive',
+      note: '',
+      collapsed: true,
+      collapsed2: true
 
     }),
     new Campaign({
       id: 40,
       title: 'YellowStone',
-      note: 'Way too many people here...'
+      note: 'Way too many people here...',
+      collapsed: true,
+      collapsed2: true
 
     })
   ]
@@ -29,34 +33,45 @@ class AppState extends EventEmitter {
   units = [
     new Unit({
       id: 24370,
-      type: '🚙',
-      name: 'Car Rental',
-      confirmation: '12jsu34we567',
-      address: '1234 Blunder Way',
-      date: '05-16-2022',
-      cost: 50,
+      type: '🛩️',
+      name: 'Recon Drone',
+      confirmation: '12jsu34we5',
+      address: 'Columbia River',
+      date: '05-01-2022',
+      cost: 500,
       campaignId: 10
 
     }),
     new Unit({
       id: 277450,
-      type: '✈️',
-      name: 'Air travel',
+      type: '🌊',
+      name: 'Carrier Group',
       confirmation: '12q34vs567',
-      address: '7634 Airport Drive',
-      date: '05-15-2022',
-      cost: 400,
+      address: 'Columbia River Mouth',
+      date: '05-04-2022',
+      cost: 4000,
       campaignId: 10
 
     }),
     new Unit({
       id: 22340,
-      type: '🏨',
-      name: 'Lodging',
+      type: '🛣️',
+      name: 'Battalion',
       confirmation: '3av87v45d67',
-      address: '5730 Sleepy street',
-      date: '05-17-2022',
-      cost: 750,
+      address: 'North of Columbia River Mouth',
+      date: '05-07-2022',
+      cost: 250,
+      campaignId: 10
+
+    }),
+    new Unit({
+      id: 22343540,
+      type: '🛩️',
+      name: 'Medical Evac',
+      confirmation: '3av87v45d67',
+      address: 'Columbia River Mouth',
+      date: '05-08-2022',
+      cost: 350,
       campaignId: 10
 
     }),
