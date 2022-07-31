@@ -6,8 +6,8 @@ import { Pop } from "../Utils/Pop.js";
 export class ReservationController{
 
   constructor() {
-    console.log('reservations controller');
-    this.test()
+    // console.log('reservations controller');
+    // this.test()
   }
 
 
@@ -33,7 +33,8 @@ export class ReservationController{
         cost: parseInt(form.cost.value),
         tripId: tripId
       }
-      console.log('new res', newReservation);
+      // console.log('new res', newReservation);
+
       reservationsService.createReservation(newReservation)
       // @ts-ignore
       form.reset()
@@ -46,7 +47,7 @@ export class ReservationController{
     }
   }
 
-  test() {
-    reservationsService._test()
-  }
+  // test() {
+  //   reservationsService._test()
+  // }
 }

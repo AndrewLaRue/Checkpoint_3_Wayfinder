@@ -17,7 +17,6 @@ function _drawTrips() {
 export class TripsController{
 
   constructor() {
-    
     // console.log('trips controller');
     // this.test()
 
@@ -43,7 +42,7 @@ export class TripsController{
       title: form.newTrip.value
       
     }
-    console.log(newTrip, ProxyState.trips);
+    // console.log(newTrip, ProxyState.trips);
     tripsService.createTrip(newTrip)
     // @ts-ignore
     form.reset()
@@ -55,16 +54,14 @@ export class TripsController{
     }
   }
 
-
-  test() {
-    tripsService._test()
-  }
-
   editNote(id) {
-     // @ts-ignore
-     let newText = window.event.target.value
+    // @ts-ignore
+    let newText = window.event.target.value
     tripsService.editNote(id, newText)
-    console.log(newText);
+    // console.log(newText);
   }
   
+  // test() {
+  //   tripsService._test()
+  // }
 }

@@ -25,9 +25,9 @@ export class Trip{
                 
 
                 <h1 class="accordion-header border-0" id="headingOne">
-                  <button class="accordion-button clear border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${this.id}"
+                  <button class="accordion-button border-0 clear" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${this.id}"
                     aria-expanded="true" aria-controls="collapse${this.id}">
-                    <span class="fs-1 text-light title-font">${this.title}</span> 
+                    <span class="fs-2 heavy-dark title-font">${this.title}</span> 
                   </button>
                 </h1>
 
@@ -35,23 +35,23 @@ export class Trip{
                 <div id="collapse${this.id}" class="accordion-collapse collapse show clear-fog" aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <div class="row border-bottom border-secondary border-3 mb-3 text-light">
-                      <div class="col-4 col-md-1">
+                    <div class="row border-bottom border-secondary border-3 mb-3 heavy-dark fs-6">
+                      <div class="col-4 col-md-1 scale-up">
                         <p class="">Type</p>
                       </div>
-                      <div class="col-4 col-md-2">
+                      <div class="col-4 col-md-2 scale-up">
                         <p class="">Unit</p>
                       </div>
-                      <div class="col-4 col-md-2">
+                      <div class="col-4 col-md-2 scale-up">
                         <p class="">Authorization</p>
                       </div>
-                      <div class="col-4 col-md-3">
+                      <div class="col-4 col-md-3 scale-up">
                         <p class="">Location</p>
                       </div>
-                      <div class="col-4 col-md-2">
+                      <div class="col-4 col-md-2 scale-up">
                         <p class="">Date</p>
                       </div>
-                      <div class="col-4 col-md-2">
+                      <div class="col-4 col-md-2 scale-up">
                         <p class="">Cost</p>
                       </div>
                     </div>
@@ -65,7 +65,7 @@ export class Trip{
                     <form onsubmit="app.reservationsController.createReservation('${this.id}')">
                       <div class="row border-top border-secondary border-3 pt-1 align-items-center">
                         <div class="col-4 col-md-1">
-                          <select class="form-control border-0 py-0 text-light bg-light text-secondary selectable" name="type" id="type" title="Type" required>
+                          <select class="form-control border-0 py-0 text-light bg-dark text-secondary text-secondary selectable" name="type" id="type" title="Type" required>
                             <option disabled selected value="">Type</option>
                             <option value="🛣️">🛣️ Land</option>
                             <option value="🛩️">🛩️ Air</option>
@@ -73,29 +73,29 @@ export class Trip{
                           </select>
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded bg-light" type="text" placeholder="Unit" name="name" id="name" title="Unit">
+                          <input required class="rounded bg-dark text-secondary" type="text" placeholder="Unit" name="name" id="name" title="Unit">
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded bg-light" required type="text" placeholder="Authorization" name="confirmation" id="confirmation" title="Authorization">
+                          <input required class="rounded bg-dark text-secondary" required type="text" placeholder="Authorization" name="confirmation" id="confirmation" title="Authorization">
                         </div>
                         <div class="col-4 col-md-3">
-                          <input required class="rounded bg-light" type="text" placeholder="Location" name="address" id="address" title="Location">
+                          <input required class="rounded bg-dark text-secondary" type="text" placeholder="Location" name="address" id="address" title="Location">
                         </div>
                         <div class="col-4 col-md-2">
-                          <input required class="rounded px-1 text-secondary bg-light" type="date" name="date" id="date" title="Date">
+                          <input required class="rounded px-1 text-secondary bg-dark text-secondary" type="date" name="date" id="date" title="Date">
                         </div>
                         <div class="col-2 col-md-1">
-                          <input required step="100" value="0" class="rounded bg-light" type="Number" placeholder="Cost" name="cost" id="cost" title="Cost">
+                          <input required step="100" value="0" class="rounded bg-dark text-secondary" type="Number" placeholder="Cost" name="cost" id="cost" title="Cost">
                         </div>
                         <div class="col-2 col-md-1">
-                          <button type="submit" class="btn m-1 selectable bg-light" title="Deploy Troops"> <i class="mdi mdi-plus"></i> </button>
+                          <button type="submit" class="btn m-1 selectable bg-dark text-secondary" title="Deploy Troops"> <i class="mdi mdi-plus"></i> </button>
                         </div>
                       </div>
                     </form>
                   </div>
                   <div class="row">
                     <div class="col-8 col-md-10">
-                      <textarea rows="2" placeholder="Notes..." class="form-control ms-5 mb-3 bg-dark text-light" onblur="app.tripsController. editNote('${this.id}')">${this.note}</textarea>
+                      <textarea rows="2" placeholder="Notes..." class="form-control heavy ms-5 mb-3 bg-dark" onblur="app.tripsController. editNote('${this.id}')">${this.note}</textarea>
                     </div>
                     <div class="col-1 offset-1">
                       <button class="btn text-danger text-center m-0 p-0 selectable" title="Delete Trip" onclick="app.tripsController.deleteTrip('${this.id}')"> <i class="mdi mdi-delete-forever fs-1 "></i></button>
@@ -122,7 +122,6 @@ export class Trip{
 
     // @ts-ignore
     let sortedRes = reservations.sort((a, b) => a.date - b.date)
-
     sortedRes.forEach(r => template += r.Template)
     
         if(template){

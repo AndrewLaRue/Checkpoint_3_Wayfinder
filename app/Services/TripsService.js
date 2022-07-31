@@ -26,9 +26,9 @@ class TripsService{
   }
 
 
-   _test(){
-  console.log('trips service');
-}
+//    _test(){
+//   console.log('trips service');
+// }
 
 }
 

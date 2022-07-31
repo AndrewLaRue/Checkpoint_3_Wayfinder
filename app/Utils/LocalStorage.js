@@ -6,7 +6,7 @@ import { Trip } from "../Models/Trip.js";
 
 
 export function saveState(){
-  console.log('saving');
+  // console.log('saving');
   let data = {
     reservations : ProxyState.reservations,
     trips: ProxyState.trips
@@ -16,7 +16,7 @@ export function saveState(){
 }
 
 export function loadState(){
-  console.log('loading');
+  // console.log('loading');
   
   let rawData = localStorage.getItem('WayFinder')
   if(rawData){
