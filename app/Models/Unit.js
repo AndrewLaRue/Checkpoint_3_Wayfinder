@@ -20,7 +20,7 @@ export class Unit{
 
   get Template() {
     return `
-                    <div class="row heavy units-mobile rounded border border-1 my-2 border-dark">
+                    <div class="row heavy units-mobile rounded border border-1 my-2 border-dark bg-dark">
                       <div class="col-4 col-md-1 scale-up" title="Type">
                         <p class="my-2 no-select">${this.type}</p>
                       </div>
