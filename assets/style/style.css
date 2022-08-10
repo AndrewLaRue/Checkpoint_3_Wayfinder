@@ -73,7 +73,8 @@ input {
 
 @media (min-width: 768px) {
   .bg-desktop {
-    background-image: url(../img/globe.png);
+    /* swapped out img for testing */
+    background-image: url(../img/mobile.jpg);
     background-position: center;
     background-size: cover;
   }
