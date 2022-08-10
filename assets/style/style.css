@@ -75,7 +75,7 @@ input {
 
 
   .bg-desktop {
-    background-image: url(assets/img/Globe.png);
+    background-image: url(assets/img/globe.png);
     background-position: center;
     background-size: cover;
   }
