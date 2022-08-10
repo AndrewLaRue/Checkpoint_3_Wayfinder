@@ -5,7 +5,7 @@ input {
 }
 
 .bg-mobile {
-  background-image: url(assets/img/mobile.jpg);
+  background-image: url(../img/mobile.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -72,10 +72,8 @@ input {
 }
 
 @media (min-width: 768px) {
-
-
   .bg-desktop {
-    background-image: url(assets/img/globe.png);
+    background-image: url(../img/globe.png);
     background-position: center;
     background-size: cover;
   }
