@@ -20,15 +20,40 @@
 <body class="bg-mobile bg-desktop">
   <header class="container-fluid clear">
     <div class="row align-items-center">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-dark text-danger position-absolute col-1" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        BattleBible 8.1
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="col-12 col-md-6 offset-md-1 text-light">
-        <h1 class="title-font heavy-dark text-center text-md-start"> <span class="mdi mdi-tank"></span> BattleAid <span
-            class="mdi mdi-tank mdi:select-inverse"></span>
+
+
+        <h1 class="title-font heavy-dark text-center text-md-start">WarHammer Fantasy
         </h1>
       </div>
       <div class=" col-12 col-md-5 text-center">
         <form onsubmit="app.campaignsController.createCampaign()">
           <label for="newCampaign" class="form-label" id="inputGroup-sizing-sm"></label>
-          <input required type="text" placeholder="Plan a new campaign..."
+          <input required type="text" placeholder="Build an Army..."
             class=" my-4 border-bottom border-2 border-dark text-center clear heavy fs-4" id="newCampaign" minlength="3"
             maxlength="15" name="newCampaign" aria-describedby="new campaign">
           <button type="submit" title="New Campaign" class="btn selectable scale-up"> <i
@@ -131,7 +156,6 @@
       </div>
     </div>
   </main>
-
 
   <footer class="clear text-light sticky-bottom">
     <div class="text-center no-select">

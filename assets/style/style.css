@@ -5,7 +5,7 @@ input {
 }
 
 .bg-mobile {
-  background-image: url(../img/mobile.jpg);
+  background-image: url(../img/Background.webp);
   background-position: center;
   background-size: cover;
 }
@@ -67,14 +67,24 @@ input {
 }
 
 .clear-fog {
+  background-color: rgba(0, 0, 0, 0.50);
   backdrop-filter: blur(3px);
+  /* backdrop-filter: opacity(2%); */
   /* background-color: transparent !important; */
+
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(4px);
+  border: solid #8d8b8b1f;
+  border-radius: 8px;
 }
 
 @media (min-width: 768px) {
   .bg-desktop {
     /* swapped out img for testing */
-    background-image: url(../img/mobile.jpg);
+    background-image: url(../img/Background.webp);
     background-position: center;
     background-size: cover;
   }
